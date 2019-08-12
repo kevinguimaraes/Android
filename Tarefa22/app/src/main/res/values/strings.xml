@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Tarefa22</string>
+    <string name="disciplina1">Disciplina 1</string>
+    <string name="hint_dis1">Digite disciplina 1</string>
+    <string name="nota1">Nota 1</string>
+    <string name="nota2">Nota 2</string>
+    <string name="nota3">Nota 3</string>
+    <string name="proximo">Proximo</string>
+    <string name="disciplina2">Disciplina 2</string>
+    <string name="hint_dis2">Digite disciplina 2</string>
+    <string name="final_result">Resultado Final</string>
+    <string name="media">Media</string>
+    <string name="sitiacao">Situacao</string>
+    <string name="media_geral">Media geral</string>
+    <string name="situacao_geral">Situacao geral</string>
+    <string name="erro_nome">Digite nome valido</string>
+    <string name="erro_nota">Digite nota valida</string>
+
+
+</resources>
