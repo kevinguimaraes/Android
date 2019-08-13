@@ -20,7 +20,7 @@ public class DisciplinaBo {
     public String getSituacao() {
         return isAprovado() ? "Aprovado" : "Reprovado";
     }
-
+//teste do git
     public boolean validaDisciplina(){
         return this.disciplina.getNome()!=null && !this.disciplina.getNome().isEmpty();
     }
