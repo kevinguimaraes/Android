@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/chair">
 
     <TextView
         style="@style/titulo_1"
@@ -14,6 +15,11 @@
     <TextView
         style="@style/titulo_2"
         android:text="Titulo 2"/>
+
+    <EditText
+        style="@style/edit_text"
+        android:hint="digite seu nome"
+        android:background="@drawable/edit_text"/>
 
 
 </LinearLayout>
