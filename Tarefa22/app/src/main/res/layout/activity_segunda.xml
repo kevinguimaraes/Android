@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.SegundaActivity">
+    tools:context=".view.SegundaActivity"
+    android:background="@drawable/chair">
 
     <TextView
         android:layout_width="match_parent"

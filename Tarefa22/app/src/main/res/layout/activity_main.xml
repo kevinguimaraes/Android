@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.MainActivity">
+    tools:context=".view.MainActivity"
+    android:background="@drawable/chair">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/titulo_1"
         android:text="@string/disciplina1"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/edit_text"
+        android:background="@drawable/edit_text"
         android:hint="@string/hint_dis1"
         android:id="@+id/edtDisciplina1"/>
 
