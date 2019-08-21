@@ -10,7 +10,9 @@ import com.example.exemploforresult.model.DadoPessoal;
 import com.example.exemploforresult.model.Endereco;
 import com.example.exemploforresult.model.Pessoa;
 import com.example.exemploforresult.uteis.Constantes;
+import com.example.exemploforresult.view.DadoPessoalActivity;
 import com.example.exemploforresult.view.EnderecoActivity;
+import com.example.exemploforresult.view.ResultadoActivity;
 
 public class MainControl {
     private Activity activity;
@@ -31,11 +33,15 @@ public class MainControl {
     }
 
     public void telaDadoPessoalAction(){
-
+        Intent it = new Intent(activity, DadoPessoalActivity.class);
+        it.putExtra(Constantes.Parametros.DADO_PESSOAL, pessoa.getDadoPessoal());
+        activity.startActivityForResult(it, Constantes.Request.DADO_PESSOAL);
     }
 
     public void telaResultadoAction() {
-
+        Intent it = new Intent(activity, ResultadoActivity.class);
+        it.putExtra(Constantes.Parametros.PESSOA, pessoa);
+        activity.startActivity(it);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){

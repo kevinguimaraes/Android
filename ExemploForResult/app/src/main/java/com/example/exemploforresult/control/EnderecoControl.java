@@ -6,6 +6,8 @@ import android.widget.EditText;
 
 import com.example.exemploforresult.R;
 import com.example.exemploforresult.model.Endereco;
+import com.example.exemploforresult.model.Pessoa;
+import com.example.exemploforresult.model.PessoaBo;
 import com.example.exemploforresult.uteis.Constantes;
 
 public class EnderecoControl {
@@ -31,6 +33,15 @@ public class EnderecoControl {
     }
 
     public boolean valida(Endereco e) {
+        if(!PessoaBo.validaCep(e)){
+            editCep.setError("CEP Invalido");
+            editCep.requestFocus();
+            return false;
+        }
+        if (!PessoaBo.validaCidade(e)) {
+            editCidade.setError("Cidade Invalida");
+            editCidade.requestFocus();
+        }
         return true;
     }
 

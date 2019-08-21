@@ -2,20 +2,20 @@ package com.example.exemploforresult.model;
 
 public class PessoaBo {
 
-    public static boolean validaNome(Pessoa p){
-        return p.getDadoPessoal().getNome()!=null
-                && !p.getDadoPessoal().getNome().isEmpty();
+    public static boolean validaNome(DadoPessoal d){
+        return d.getNome()!=null
+                && !d.getNome().isEmpty();
     }
-    public static boolean validaIdade(Pessoa p){
-        return p.getDadoPessoal().getIdade()!=null
-                && p.getDadoPessoal().getIdade()>=0;
+    public static boolean validaIdade(DadoPessoal d){
+        return d.getIdade()!=null
+                && d.getIdade()>=0;
     }
-    public static boolean validaCep(Pessoa p){
-        return p.getEndereco().getCep()!=null
-                && p.getEndereco().getCep().length()==9;
+    public static boolean validaCep(Endereco  e){
+        return e.getCep()!=null
+                && e.getCep().length()==9;
     }
-    public static boolean validaCidade(Pessoa p){
-        return p.getEndereco().getCidade()!=null
-                && !p.getEndereco().getCidade().isEmpty();
+    public static boolean validaCidade(Endereco e){
+        return e.getCidade()!=null
+                && !e.getCidade().isEmpty();
     }
 }
