@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         control.telaEnderecoAction();
     }
 
+    public void telaContato(View v){
+        control.telaContatoAction();
+    }
+
     public void telaResultado(View v){
         control.telaResultadoAction();
     }

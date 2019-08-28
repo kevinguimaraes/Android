@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.DadoPessoalActivity"></activity>
+        <activity android:name=".view.ContatoActivity"></activity>
+        <activity android:name=".view.DadoPessoalActivity" />
         <activity android:name=".view.EnderecoActivity" />
         <activity android:name=".view.ResultadoActivity" />
         <activity android:name=".view.MainActivity">

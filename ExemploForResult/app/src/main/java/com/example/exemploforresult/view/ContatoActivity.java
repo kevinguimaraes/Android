@@ -6,16 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.exemploforresult.R;
-import com.example.exemploforresult.control.EnderecoControl;
+import com.example.exemploforresult.control.ContatoControl;
 
-public class EnderecoActivity extends AppCompatActivity {
+public class ContatoActivity extends AppCompatActivity {
 
-    private EnderecoControl control;
+    private ContatoControl control;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_endereco);
+        setContentView(R.layout.activity_contato);
     }
 
     public void enviar(View v){

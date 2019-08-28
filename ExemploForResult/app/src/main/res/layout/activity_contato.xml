@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/container"
+    tools:context=".view.ContatoActivity">
+
+    <EditText
+        style="@style/edit_text"
+        android:hint="Seu Telefone"
+        android:id="@+id/editTelefone"/>
+
+    <EditText
+        style="@style/edit_text"
+        android:hint="Sua Email"
+        android:id="@+id/editEmail"/>
+
+    <Button
+        style="@style/btn_sucesso"
+        android:text="Enviar"
+        android:onClick="enviar"/>
+
+    <Button
+        style="@style/btn_dark"
+        android:text="Cancelar"
+        android:onClick="cancelar"/>
+</LinearLayout>

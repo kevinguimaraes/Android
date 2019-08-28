@@ -10,6 +10,7 @@ import com.example.exemploforresult.model.DadoPessoal;
 import com.example.exemploforresult.model.Endereco;
 import com.example.exemploforresult.model.Pessoa;
 import com.example.exemploforresult.uteis.Constantes;
+import com.example.exemploforresult.view.ContatoActivity;
 import com.example.exemploforresult.view.DadoPessoalActivity;
 import com.example.exemploforresult.view.EnderecoActivity;
 import com.example.exemploforresult.view.ResultadoActivity;
@@ -36,6 +37,12 @@ public class MainControl {
         Intent it = new Intent(activity, DadoPessoalActivity.class);
         it.putExtra(Constantes.Parametros.DADO_PESSOAL, pessoa.getDadoPessoal());
         activity.startActivityForResult(it, Constantes.Request.DADO_PESSOAL);
+    }
+
+    public void telaContatoAction(){
+        Intent it = new Intent(activity, ContatoActivity.class);
+        it.putExtra(Constantes.Parametros.CONTATO, pessoa.getContato());
+        activity.startActivityForResult(it, Constantes.Request.CONTATO);
     }
 
     public void telaResultadoAction() {

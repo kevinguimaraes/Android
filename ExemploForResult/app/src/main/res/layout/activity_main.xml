@@ -17,7 +17,12 @@
     <Button
         style="@style/btn_sucesso"
         android:text="Endereço"
-        android:onClick="telaEndereço"/>
+        android:onClick="telaEndereco"/>
+
+    <Button
+        style="@style/btn_sucesso"
+        android:text="Contato"
+        android:onClick="telaContato"/>
 
     <Button
         style="@style/btn_sucesso"
