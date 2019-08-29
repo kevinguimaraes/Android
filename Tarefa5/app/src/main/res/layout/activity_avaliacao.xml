@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.AvaliacaoActivity">
+
+
+    <TextView
+        style="@style/base"
+        android:text="@string/disciplina"/>
+
+    <EditText
+        style="@style/edit_text"
+        android:hint="@string/hint_disciplina"
+        android:id="@+id/editDisciplina"/>
+
+    <LinearLayout
+        style="@style/base"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/base"
+                android:text="@string/nota1"/>
+
+            <EditText
+                style="@style/edit_text"
+                android:hint="@string/hint_nota1"
+                android:id="@+id/editNota1"/>
+
+            <Button
+                style="@style/btn_sucesso"
+                android:text="@string/enviar"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/base"
+                android:text="@string/nota2"/>
+
+            <EditText
+                style="@style/edit_text"
+                android:hint="@string/hint_nota2"
+                android:id="@+id/editNota2"/>
+
+            <Button
+                style="@style/btn_dark"
+                android:text="@string/cancelar"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

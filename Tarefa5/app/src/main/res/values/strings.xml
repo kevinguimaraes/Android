@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Tarefa5</string>
+    <string name="avaliacao1">Avaliação 1</string>
+    <string name="avaliacao2">Avaliação 2</string>
+    <string name="resultado">Resultado</string>
+    <string name="disciplina">Disciplina</string>
+    <string name="nota1">Nota 1</string>
+    <string name="nota2">Nota 2</string>
+    <string name="media">Media</string>
+    <string name="pdisciplina">Disciplina</string>
+    <string name="pnota1">Nota 1: </string>
+    <string name="pnota2">Nota 2: </string>
+    <string name="pmedia">Media: </string>
+    <string name="enviar">Enviar: </string>
+    <string name="cancelar">Cancelar</string>
+    <string name="hint_disciplina">Digite disciplina</string>
+    <string name="hint_nota1">Digite nota 1</string>
+    <string name="hint_nota2">Digite nota 2</string>
+</resources>
