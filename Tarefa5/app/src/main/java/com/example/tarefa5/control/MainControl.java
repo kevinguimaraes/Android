@@ -40,13 +40,11 @@ public class MainControl {
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if(resultCode == activity.RESULT_OK) {
             if (requestCode == Constantes.Request.DISCIPLINA1){
-                Disciplina disciplina =  (Disciplina) data.getSerializableExtra(Constantes.Parametros.DISCIPLINA1);
-                this.disciplina1.;
-                this.tvTeste.setText(endereco.toString());
-            } else if (requestCode == Constantes.Request.DADO_PESSOAL) {
-                DadoPessoal dadoPessoal = (DadoPessoal) data.getSerializableExtra(Constantes.Parametros.DADO_PESSOAL);
-                this.pessoa.setDadoPessoal(dadoPessoal);
-                this.tvTeste.setText(dadoPessoal.toString());
+                Disciplina disciplina =  (Disciplina) data.getSerializableExtra(Constantes.Parametros.DISCIPLINA);
+                this.disciplina1 = disciplina;
+            } else if (requestCode == Constantes.Request.DISCIPLINA2) {
+                Disciplina disciplina =  (Disciplina) data.getSerializableExtra(Constantes.Parametros.DISCIPLINA);
+                this.disciplina2 = disciplina;
             }
         } else if (resultCode == activity.RESULT_CANCELED) {
             Toast.makeText(activity, "Ação cancelada", Toast.LENGTH_SHORT).show();

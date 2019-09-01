@@ -39,19 +39,23 @@
 
             <TextView
                 style="@style/base"
-                android:text="@string/pdisciplina"/>
+                android:text="@string/pdisciplina"
+                android:id="@+id/tvA1Disciplina"/>
 
             <TextView
                 style="@style/base"
-                android:text="@string/pnota1"/>
+                android:text="@string/pnota1"
+                android:id="@+id/tvA1Nota1"/>
 
             <TextView
                 style="@style/base"
-                android:text="@string/pnota2"/>
+                android:text="@string/pnota2"
+                android:id="@+id/tvA1Nota2"/>
 
             <TextView
                 style="@style/base"
-                android:text="@string/pmedia"/>
+                android:text="@string/pmedia"
+                android:id="@+id/tvA1Media"/>
 
         </LinearLayout>
 
@@ -85,19 +89,23 @@
 
             <TextView
                 style="@style/base"
-                android:text="@string/pdisciplina"/>
+                android:text="@string/pdisciplina"
+                android:id="@+id/tvA2Disciplina"/>
 
             <TextView
                 style="@style/base"
-                android:text="@string/pnota1"/>
+                android:text="@string/pnota1"
+                android:id="@+id/tvA2Nota1"/>
 
             <TextView
                 style="@style/base"
-                android:text="@string/pnota2"/>
+                android:text="@string/pnota2"
+                android:id="@+id/tvA2Nota2"/>
 
             <TextView
                 style="@style/base"
-                android:text="@string/pmedia"/>
+                android:text="@string/pmedia"
+                android:id="@+id/tvA2Media"/>
 
         </LinearLayout>
 
