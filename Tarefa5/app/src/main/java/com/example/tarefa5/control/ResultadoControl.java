@@ -2,6 +2,7 @@ package com.example.tarefa5.control;
 
 import android.app.Activity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tarefa5.R;
 import com.example.tarefa5.Uteis.Constantes;
@@ -50,6 +51,7 @@ public class ResultadoControl {
         this.tvA2Nota1 = activity.findViewById(R.id.tvA2Nota1);
         this.tvA2Nota2 = activity.findViewById(R.id.tvA2Nota2);
         this.tvA2Media = activity.findViewById(R.id.tvA2Media);
+        Toast.makeText(activity, "tela res result", Toast.LENGTH_SHORT).show();
     }
 
 

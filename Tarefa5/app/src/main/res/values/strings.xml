@@ -11,7 +11,7 @@
     <string name="pnota1">Nota 1: </string>
     <string name="pnota2">Nota 2: </string>
     <string name="pmedia">Media: </string>
-    <string name="enviar">Enviar: </string>
+    <string name="enviar">Enviar </string>
     <string name="cancelar">Cancelar</string>
     <string name="hint_disciplina">Digite disciplina</string>
     <string name="hint_nota1">Digite nota 1</string>

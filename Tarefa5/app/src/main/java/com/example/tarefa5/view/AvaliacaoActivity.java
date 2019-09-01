@@ -14,6 +14,7 @@ public class AvaliacaoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        control = new DisciplinaControl(this);
         setContentView(R.layout.activity_avaliacao);
     }
 

@@ -40,7 +40,8 @@
 
             <Button
                 style="@style/btn_sucesso"
-                android:text="@string/enviar"/>
+                android:text="@string/enviar"
+                android:onClick="enviar"/>
 
         </LinearLayout>
 
@@ -62,7 +63,8 @@
 
             <Button
                 style="@style/btn_dark"
-                android:text="@string/cancelar"/>
+                android:text="@string/cancelar"
+                android:onClick="cancelar"/>
 
         </LinearLayout>
     </LinearLayout>
