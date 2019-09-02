@@ -24,6 +24,9 @@ public class DisciplinaControl {
         this.editNome = this.activity.findViewById(R.id.editDisciplina);
         this.editNota1 = this.activity.findViewById(R.id.editNota1);
         this.editNota2 = this.activity.findViewById(R.id.editNota2);
+        this.editNome.setText("teste");
+        this.editNota1.setText("2");
+        this.editNota2.setText("3");
         Toast.makeText(activity, "tela init", Toast.LENGTH_SHORT).show();
     }
 
@@ -47,7 +50,7 @@ public class DisciplinaControl {
             Toast.makeText(activity, "tela Disciplina result", Toast.LENGTH_SHORT).show();
             Intent it = new Intent();
             it.putExtra(Constantes.Parametros.DISCIPLINA, d);
-            activity.setResult(activity.RESULT_OK, it);
+            activity.setResult(Activity.RESULT_OK, it);
             activity.finish();
         }
 
@@ -56,7 +59,7 @@ public class DisciplinaControl {
 
     public void cancelarAction() {
         Toast.makeText(activity, "tela Disciplina canceled", Toast.LENGTH_SHORT).show();
-        activity.setResult(activity.RESULT_CANCELED);
+        activity.setResult(Activity.RESULT_CANCELED);
         activity.finish();
     }
 

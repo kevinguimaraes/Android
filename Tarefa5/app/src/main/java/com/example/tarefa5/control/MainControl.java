@@ -41,7 +41,7 @@ public class MainControl {
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode == activity.RESULT_OK) {
+        if(resultCode == Activity.RESULT_OK) {
             if (requestCode == Constantes.Request.DISCIPLINA1){
                 Disciplina disciplina =  (Disciplina) data.getSerializableExtra(Constantes.Parametros.DISCIPLINA);
                 this.disciplina1 = disciplina;
@@ -51,7 +51,7 @@ public class MainControl {
                 this.disciplina2 = disciplina;
                 Toast.makeText(activity, "Disciplina 2", Toast.LENGTH_SHORT).show();
             }
-        } else if (resultCode == activity.RESULT_CANCELED) {
+        } else if (resultCode == Activity.RESULT_CANCELED) {
             Toast.makeText(activity, "Ação cancelada", Toast.LENGTH_SHORT).show();
         }
     }

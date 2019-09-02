@@ -12,8 +12,8 @@ public class ResultadoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        control = new ResultadoControl(this);
         setContentView(R.layout.activity_resultado);
+        control = new ResultadoControl(this);
     }
 
 }

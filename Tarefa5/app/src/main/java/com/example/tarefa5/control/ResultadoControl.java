@@ -29,17 +29,23 @@ public class ResultadoControl {
     private void showResult() {
         Disciplina d1 = (Disciplina) activity.getIntent().getSerializableExtra(Constantes.Parametros.DISCIPLINA1);
         Disciplina d2 = (Disciplina) activity.getIntent().getSerializableExtra(Constantes.Parametros.DISCIPLINA2);
-        DisciplinaBo db = new DisciplinaBo(d1);
-        this.tvA1Disciplina.setText(this.tvA1Disciplina.getText().toString() + d1.getNome());
-        this.tvA1Nota1.setText(this.tvA1Nota1.getText().toString() + d1.getNota1());
-        this.tvA1Nota2.setText(this.tvA1Nota2.getText().toString() + d1.getNota2());
-        this.tvA1Media.setText(this.tvA1Media.getText().toString() + db.getMedia());
 
-        db = new DisciplinaBo(d1);
-        this.tvA2Disciplina.setText(this.tvA2Disciplina.getText().toString() + d2.getNome());
-        this.tvA2Nota1.setText(this.tvA2Nota1.getText().toString() + d2.getNota1());
-        this.tvA2Nota2.setText(this.tvA2Nota2.getText().toString() + d2.getNota2());
-        this.tvA2Media.setText(this.tvA2Media.getText().toString() + db.getMedia());
+        if (d1 != null ) {
+            DisciplinaBo db = new DisciplinaBo(d1);
+            this.tvA1Disciplina.setText(this.tvA1Disciplina.getText().toString() + d1.getNome());
+            this.tvA1Nota1.setText(this.tvA1Nota1.getText().toString() + d1.getNota1());
+            this.tvA1Nota2.setText(this.tvA1Nota2.getText().toString() + d1.getNota2());
+            this.tvA1Media.setText(this.tvA1Media.getText().toString() + db.getMedia());
+        }
+
+        if (d2 != null) {
+            DisciplinaBo db = new DisciplinaBo(d1);
+            this.tvA2Disciplina.setText(this.tvA2Disciplina.getText().toString() + d2.getNome());
+            this.tvA2Nota1.setText(this.tvA2Nota1.getText().toString() + d2.getNota1());
+            this.tvA2Nota2.setText(this.tvA2Nota2.getText().toString() + d2.getNota2());
+            this.tvA2Media.setText(this.tvA2Media.getText().toString() + db.getMedia());
+        }
+
     }
 
     private void initComponents() {
