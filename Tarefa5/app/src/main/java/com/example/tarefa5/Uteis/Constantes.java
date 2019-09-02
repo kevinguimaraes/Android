@@ -4,6 +4,7 @@ public class Constantes {
     public static class Parametros {
         public static final String DISCIPLINA1 = "disciplina1";
         public static final String DISCIPLINA2 = "disciplina2";
+        public static final String DISCIPLINA = "disciplina";
     }
 
     public static class Request {
