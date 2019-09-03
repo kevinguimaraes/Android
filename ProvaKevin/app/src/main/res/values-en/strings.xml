@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProvaKevin</string>
+    <string name="cancelar">Canceled</string>
+    <string name="configuracao">Config</string>
+    <string name="dados_cliente">Client Data</string>
+    <string name="enviar">Send</string>
+    <string name="fechar">Close</string>
+    <string name="hint_max">Max</string>
+    <string name="hint_min">Min</string>
+    <string name="hint_nome">Insert name</string>
+    <string name="idade_invalida">Invalid Age</string>
+    <string name="nome_invalido">Invalid Name</string>
+    <string name="valida_config">The minimum value must be higher then maximum value</string>
+    <string name="acao_cancelada">Action canceled</string>
+</resources>

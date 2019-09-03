@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/container"
+    tools:context=".view.ClienteActivity">
+
+    <TextView
+        style="@style/titulo"
+        android:text="@string/dados_cliente"/>
+
+    <EditText
+        style="@style/edit_text"
+        android:hint="@string/hint_nome"
+        android:id="@+id/editNome"/>
+
+    <NumberPicker
+        style="@style/base"
+        android:id="@+id/npIdade"/>
+
+    <LinearLayout
+        style="@style/base"
+        android:orientation="horizontal">
+        <Button
+            style="@style/botao_lado_a_lado"
+            android:text="@string/enviar"
+            android:onClick="enviar"/>
+        <Button
+            style="@style/botao_lado_a_lado"
+            android:text="@string/cancelar"
+            android:onClick="cancelar"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/container"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        style="@style/titulo"
+        android:text="@string/configuracao"/>
+
+    <LinearLayout
+        style="@style/base"
+        android:orientation="horizontal">
+
+        <EditText
+            style="@style/edit_text_lado_a_lado"
+            android:hint="@string/hint_max"
+            android:id="@+id/editMax"
+            android:inputType="number"/>
+
+        <EditText
+            style="@style/edit_text_lado_a_lado"
+            android:hint="@string/hint_min"
+            android:id="@+id/editMin"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <Button
+        style="@style/btn_sucesso"
+        android:text="@string/enviar"
+        android:onClick="enviar"/>
+    <Button
+        style="@style/btn_dark"
+        android:text="@string/fechar"
+        android:onClick="fechar"/>
+
+    <TextView
+        style="@style/texto_resultado"
+        android:id="@+id/tvResult"/>
+
+</LinearLayout>
