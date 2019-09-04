@@ -118,6 +118,7 @@ public class MainControl {
             public void onClick(DialogInterface dialogInterface, int i) {
                 excluirEstadoLv(e);
                 atualizarContador();
+                estado = null;
             }
         });
         alerta.show();
