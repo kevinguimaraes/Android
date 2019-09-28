@@ -9,6 +9,7 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
+import senac.renato.correcaominhapedida.model.Categoria;
 import senac.renato.correcaominhapedida.model.ItemComanda;
 import senac.renato.correcaominhapedida.model.Produto;
 
@@ -21,6 +22,7 @@ public class MyORMLiteHelper extends OrmLiteSqliteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
         try {
+            TableUtils.createTable(connectionSource, Categoria.class);
             TableUtils.createTable(connectionSource, Produto.class);
             TableUtils.createTable(connectionSource, ItemComanda.class);
         } catch (SQLException e) {
@@ -32,6 +34,7 @@ public class MyORMLiteHelper extends OrmLiteSqliteOpenHelper{
         try {
             TableUtils.dropTable(connectionSource, Produto.class, true);
             TableUtils.dropTable(connectionSource, ItemComanda.class, true);
+            TableUtils.dropTable(connectionSource, Categoria.class, true);
             onCreate(sqLiteDatabase, connectionSource);
         } catch (SQLException e) {
             e.printStackTrace();

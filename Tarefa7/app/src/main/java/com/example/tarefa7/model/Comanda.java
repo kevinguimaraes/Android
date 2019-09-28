@@ -53,4 +53,10 @@ public class Comanda implements Serializable {
     public String getLocal() {
         return local;
     }
+
+    @Override
+    public String toString() {
+        return "Mesa: " + mesa +
+                "\nLocal: " + local;
+    }
 }

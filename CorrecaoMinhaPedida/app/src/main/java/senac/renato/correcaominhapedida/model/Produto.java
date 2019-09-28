@@ -16,13 +16,17 @@ public class Produto implements Serializable {
     @DatabaseField(canBeNull = false)
     private Double valor;
 
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
+    private Categoria categoria;
+
     public Produto() {
     }
 
-    public Produto(Integer id, String nome, Double valor) {
+    public Produto(Integer id, String nome, Double valor, Categoria categoria) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
+        this.categoria = categoria;
     }
 
     public Produto(String nome, Double valor) {
@@ -30,7 +34,13 @@ public class Produto implements Serializable {
         this.valor = valor;
     }
 
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
 
     public Integer getId() {
         return id;
@@ -63,6 +73,7 @@ public class Produto implements Serializable {
             this.valor = null;
         }
     }
+
 
     @Override
     public String toString() {
