@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SENAC</string>
+    <string name="nova_avaliacao">Nova avaliação</string>
+    <string name="unidade_curricular">Unidade curricular</string>
+    <string name="hint_assunto_avaliacao">Assunto da avaliação</string>
+    <string name="hint_nota_obtida">Nota obtida</string>
+    <string name="salvar">Salvar</string>
+    <string name="fechar">Fechar</string>
+    <string name="excluir">Excluir</string>
+    <string name="media_geral">Media Geral</string>
+    <string name="erro_assunto">Preencha o campo assunto</string>
+    <string name="erro_nota">Preencha o campo com uma nota valida de 0 à 10</string>
+</resources>
