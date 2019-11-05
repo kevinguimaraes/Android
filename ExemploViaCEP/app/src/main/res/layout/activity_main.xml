@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".view.MainActivity">
+    <EditText
+        android:id="@+id/editCep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CEP"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/editRua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rua"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/editCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cidade"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/editUf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="UF"
+        android:padding="8dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pesquisarCep"
+        android:text="Pesquisar" />
+</LinearLayout>
