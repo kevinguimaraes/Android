@@ -27,9 +27,9 @@ public class Medicao implements Serializable{
     private Equipamento equipamento;
 
 	@DatabaseField(foreign = true, foreignAutoRefresh = true)
-    private Equipamento amostra;
+    private Amostra amostra;
 
-	public Medicao(Integer id, double valor, String unidade, Date dt_Medicao, Equipamento equipamento, Equipamento amostra) {
+	public Medicao(Integer id, double valor, String unidade, Date dt_Medicao, Equipamento equipamento, Amostra amostra) {
 		super();
 		this.id = id;
 		this.valor = valor;
@@ -74,6 +74,20 @@ public class Medicao implements Serializable{
 	public void setDt_Medicao(Date dt_Medicao) {
 		this.dt_Medicao = dt_Medicao;
 	}
-    
 
+	public void setEquipamento(Equipamento equipamento) {
+		this.equipamento = equipamento;
+	}
+
+	public void setAmostra(Amostra amostra) {
+		this.amostra = amostra;
+	}
+
+	public Equipamento getEquipamento() {
+		return equipamento;
+	}
+
+	public Amostra getAmostra() {
+		return amostra;
+	}
 }

@@ -2,7 +2,7 @@ package com.example.mylab.control;
 
 import android.app.Activity;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -15,46 +15,37 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
 import java.lang.reflect.Type;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
-public class EnviarControl {
+public class VisualizarControl {
     private Activity activity;
-    private Spinner spEquipamento;
-    private List<Equipamento> listEquipamento;
-    private ArrayAdapter<Equipamento> adapterEquipamento;
 
     private Spinner spAmostra;
     private List<Amostra> listAmostra;
     private ArrayAdapter<Amostra> adapterAmostra;
-
-    private EditText editValor;
-    private EditText editUnidade;
-    private EditText editData;
-
-    private Equipamento equipamento;
     private Amostra amostra;
 
-    public EnviarControl(Activity activity) {
+    private ListView lvMedidas;
+    private List<Medicao> listMedicao;
+    private ArrayAdapter<Medicao> adapterMedicao;
+
+    public VisualizarControl(Activity activity) {
         this.activity = activity;
         initComponents();
     }
 
     private void initComponents() {
-        editData = activity.findViewById(R.id.editData);
-        editUnidade = activity.findViewById(R.id.editUnidade);
-        editValor = activity.findViewById(R.id.editValor);
-        spEquipamento = activity.findViewById(R.id.spEquipamento);
         spAmostra = activity.findViewById(R.id.spAmostra);
-        carregarEquipamentos();
+        lvMedidas = activity.findViewById(R.id.lvMedidas);
         carregarAmostras();
+        carregarMedidas();
+
     }
 
     private void carregarAmostras() {
@@ -100,9 +91,9 @@ public class EnviarControl {
         });
     }
 
-    private void carregarEquipamentos(){
+    private void carregarMedidas(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/equipamento";
+        String URL = "http://10.10.100.41:8080/MyLab/api/medicao";
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onStart() {
@@ -112,22 +103,19 @@ public class EnviarControl {
 
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
-                String equipamentoJSON = new String(bytes);
-                Gson gson = new Gson();
-                Type equipamentoListType = new TypeToken<ArrayList<Equipamento>>(){}.getType();
-                List<Equipamento> listEquipamento = gson.fromJson(equipamentoJSON, equipamentoListType);
+                String medicaoJSON = new String(bytes);
+                Gson gson=  new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
-                Equipamento e = (Equipamento) spEquipamento.getSelectedItem();
-
-                adapterEquipamento = new ArrayAdapter<>(
+                Type medicaoListType = new TypeToken<ArrayList<Medicao>>(){}.getType();
+                List<Medicao> listMedicao = gson.fromJson(medicaoJSON, medicaoListType);
+                adapterMedicao = new ArrayAdapter<>(
                         activity,
                         android.R.layout.simple_list_item_1,
-                        listEquipamento
+                        listMedicao
                 );
-                spEquipamento.setAdapter(adapterEquipamento);
-
-                adapterEquipamento.addAll(listEquipamento);
-                Toast.makeText(activity, listEquipamento.size()+"Size", Toast.LENGTH_SHORT).show();
+                lvMedidas.setAdapter(adapterMedicao);
+                adapterMedicao.addAll(listMedicao);
+                Toast.makeText(activity, listMedicao.size()+"Size", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -143,52 +131,4 @@ public class EnviarControl {
         });
     }
 
-    public void enviarAction() {
-        RequestParams params = new RequestParams();
-        AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/medicao";
-        Gson gson = new Gson();
-        client.addHeader("user-agent", "Chrome Mozilla");
-        Medicao m = getDadosForm();
-        params.put("dado", gson.toJson(m));
-
-        client.post(URL, params, new AsyncHttpResponseHandler() {
-            @Override
-            public void onStart() {
-                super.onStart();
-                Toast.makeText(activity, "Iniciando requisição", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onSuccess(int i, Header[] headers, byte[] bytes) {
-                Toast.makeText(activity, "Enviado  com sucesso!", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onRetry(int retryNo) {
-                super.onRetry(retryNo);
-                Toast.makeText(activity, "Tentativa "+retryNo, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
-                Toast.makeText(activity, "Falhou." + i, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private Medicao getDadosForm() {
-        Medicao m = new Medicao();
-        try {
-            m.setDt_Medicao(new SimpleDateFormat("yyyy/MM/dd").parse(editData.getText().toString()));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        m.setUnidade(editUnidade.getText().toString());
-        m.setValor(Double.parseDouble(editValor.getText().toString()));
-        m.setAmostra(this.amostra);
-        m.setEquipamento(this.equipamento);
-
-        return m;
-    }
 }

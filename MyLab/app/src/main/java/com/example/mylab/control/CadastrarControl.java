@@ -107,7 +107,7 @@ public class CadastrarControl {
 
     private void carregarEquipamentos(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.102.1:8080/MyLab/api/equipamento";
+        String URL = "http://10.10.100.41:8080/MyLab/api/equipamento";
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onStart() {
