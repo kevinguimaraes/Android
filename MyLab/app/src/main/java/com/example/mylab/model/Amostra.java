@@ -72,5 +72,9 @@ public class Amostra implements Serializable{
 		this.observacao = observacao;
 	}
 
+	@Override
+	public String toString(){
+		return this.codigo + " - " + this.dt_amostra;
+	}
 
 }

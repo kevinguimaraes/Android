@@ -11,6 +11,7 @@ import com.example.mylab.R;
 import com.example.mylab.dao.EquipamentoDao;
 import com.example.mylab.model.Amostra;
 import com.example.mylab.model.Equipamento;
+import com.example.mylab.util.Constantes;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
@@ -72,7 +73,7 @@ public class CadastrarControl {
     public void enviarAction(){
         RequestParams params = new RequestParams();
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.102.1:8080/MyLab/api/equipamento";
+        String URL = Constantes.Parametros.URL + "equipamento";
         Gson gson = new Gson();
         client.addHeader("user-agent", "Chrome Mozilla");
         Equipamento e = getDadosForm();
@@ -107,7 +108,7 @@ public class CadastrarControl {
 
     private void carregarEquipamentos(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/equipamento";
+        String URL = Constantes.Parametros.URL + "equipamento";
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onStart() {

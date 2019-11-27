@@ -90,4 +90,9 @@ public class Medicao implements Serializable{
 	public Amostra getAmostra() {
 		return amostra;
 	}
+
+	@Override
+	public String toString(){
+		return this.valor + " " + this.unidade;
+	}
 }

@@ -10,6 +10,7 @@ import com.example.mylab.R;
 import com.example.mylab.model.Amostra;
 import com.example.mylab.model.Equipamento;
 import com.example.mylab.model.Medicao;
+import com.example.mylab.util.Constantes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -50,7 +51,7 @@ public class VisualizarControl {
 
     private void carregarAmostras() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/amostra";
+        String URL = Constantes.Parametros.URL + "amostra";
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onStart() {
@@ -75,7 +76,7 @@ public class VisualizarControl {
                 spAmostra.setAdapter(adapterAmostra);
 
                 adapterAmostra.addAll(listAmostra);
-                Toast.makeText(activity, listAmostra.size()+"Size", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(activity, listAmostra.size()+"Size", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -93,7 +94,7 @@ public class VisualizarControl {
 
     private void carregarMedidas(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/medicao";
+        String URL = Constantes.Parametros.URL + "medicao";
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onStart() {

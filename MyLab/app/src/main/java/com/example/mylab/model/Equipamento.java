@@ -79,11 +79,6 @@ public class Equipamento implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Equipamento{" +
-				"nome='" + nome + '\'' +
-				", serial='" + serial + '\'' +
-				", hw_version='" + hw_version + '\'' +
-				", fw_version='" + fw_version + '\'' +
-				'}';
+		return this.nome + " v" + this.hw_version;
 	}
 }

@@ -10,6 +10,7 @@ import com.example.mylab.R;
 import com.example.mylab.model.Amostra;
 import com.example.mylab.model.Equipamento;
 import com.example.mylab.model.Medicao;
+import com.example.mylab.util.Constantes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -59,7 +60,7 @@ public class EnviarControl {
 
     private void carregarAmostras() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/amostra";
+        String URL = Constantes.Parametros.URL + "amostra";
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onStart() {
@@ -73,8 +74,6 @@ public class EnviarControl {
                 Gson gson=  new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
                 Type amostraListType = new TypeToken<ArrayList<Amostra>>(){}.getType();
                 List<Amostra> listAmostra= gson.fromJson(amostraJSON, amostraListType);
-
-                Amostra a = (Amostra) spAmostra.getSelectedItem();
 
                 adapterAmostra = new ArrayAdapter<>(
                         activity,
@@ -102,7 +101,7 @@ public class EnviarControl {
 
     private void carregarEquipamentos(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/equipamento";
+        String URL = Constantes.Parametros.URL + "equipamento";
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onStart() {
@@ -116,8 +115,6 @@ public class EnviarControl {
                 Gson gson = new Gson();
                 Type equipamentoListType = new TypeToken<ArrayList<Equipamento>>(){}.getType();
                 List<Equipamento> listEquipamento = gson.fromJson(equipamentoJSON, equipamentoListType);
-
-                Equipamento e = (Equipamento) spEquipamento.getSelectedItem();
 
                 adapterEquipamento = new ArrayAdapter<>(
                         activity,
@@ -146,11 +143,14 @@ public class EnviarControl {
     public void enviarAction() {
         RequestParams params = new RequestParams();
         AsyncHttpClient client = new AsyncHttpClient();
-        String URL = "http://10.10.100.41:8080/MyLab/api/medicao";
+        String URL = Constantes.Parametros.URL + "medicao";
         Gson gson = new Gson();
         client.addHeader("user-agent", "Chrome Mozilla");
         Medicao m = getDadosForm();
+        m.setEquipamento((Equipamento)spEquipamento.getSelectedItem());
+        m.setAmostra((Amostra)spAmostra.getSelectedItem());
         params.put("dado", gson.toJson(m));
+        Toast.makeText(activity, gson.toJson(m), Toast.LENGTH_LONG).show();
 
         client.post(URL, params, new AsyncHttpResponseHandler() {
             @Override

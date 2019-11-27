@@ -50,6 +50,9 @@ public class Cliente implements Serializable{
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-	
 
+	@Override
+	public String toString(){
+		return this.pessoa.getNome();
+	}
 }
