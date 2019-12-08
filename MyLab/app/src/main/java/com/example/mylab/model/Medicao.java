@@ -21,7 +21,7 @@ public class Medicao implements Serializable{
     private String unidade;
 
 	@DatabaseField(dataType = DataType.DATE)
-    private Date dt_Medicao;
+    private Date dt_medicao;
 
 	@DatabaseField(foreign = true, foreignAutoRefresh = true)
     private Equipamento equipamento;
@@ -34,7 +34,7 @@ public class Medicao implements Serializable{
 		this.id = id;
 		this.valor = valor;
 		this.unidade = unidade;
-		this.dt_Medicao = dt_Medicao;
+		this.dt_medicao = dt_Medicao;
 		this.equipamento = equipamento;
 		this.amostra = amostra;
 	}
@@ -68,11 +68,11 @@ public class Medicao implements Serializable{
 	}
 
 	public Date getDt_Medicao() {
-		return dt_Medicao;
+		return dt_medicao;
 	}
 
 	public void setDt_Medicao(Date dt_Medicao) {
-		this.dt_Medicao = dt_Medicao;
+		this.dt_medicao = dt_Medicao;
 	}
 
 	public void setEquipamento(Equipamento equipamento) {

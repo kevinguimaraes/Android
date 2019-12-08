@@ -22,6 +22,7 @@ import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
@@ -38,7 +39,6 @@ public class EnviarControl {
 
     private EditText editValor;
     private EditText editUnidade;
-    private EditText editData;
 
     private Equipamento equipamento;
     private Amostra amostra;
@@ -49,7 +49,6 @@ public class EnviarControl {
     }
 
     private void initComponents() {
-        editData = activity.findViewById(R.id.editData);
         editUnidade = activity.findViewById(R.id.editUnidade);
         editValor = activity.findViewById(R.id.editValor);
         spEquipamento = activity.findViewById(R.id.spEquipamento);
@@ -73,7 +72,7 @@ public class EnviarControl {
                 String amostraJSON = new String(bytes);
                 Gson gson=  new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
                 Type amostraListType = new TypeToken<ArrayList<Amostra>>(){}.getType();
-                List<Amostra> listAmostra= gson.fromJson(amostraJSON, amostraListType);
+                listAmostra= gson.fromJson(amostraJSON, amostraListType);
 
                 adapterAmostra = new ArrayAdapter<>(
                         activity,
@@ -114,7 +113,7 @@ public class EnviarControl {
                 String equipamentoJSON = new String(bytes);
                 Gson gson = new Gson();
                 Type equipamentoListType = new TypeToken<ArrayList<Equipamento>>(){}.getType();
-                List<Equipamento> listEquipamento = gson.fromJson(equipamentoJSON, equipamentoListType);
+                listEquipamento = gson.fromJson(equipamentoJSON, equipamentoListType);
 
                 adapterEquipamento = new ArrayAdapter<>(
                         activity,
@@ -179,11 +178,12 @@ public class EnviarControl {
 
     private Medicao getDadosForm() {
         Medicao m = new Medicao();
-        try {
+        /*try {
             m.setDt_Medicao(new SimpleDateFormat("yyyy/MM/dd").parse(editData.getText().toString()));
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
+        m.setDt_Medicao(new Date());
         m.setUnidade(editUnidade.getText().toString());
         m.setValor(Double.parseDouble(editValor.getText().toString()));
         m.setAmostra(this.amostra);
